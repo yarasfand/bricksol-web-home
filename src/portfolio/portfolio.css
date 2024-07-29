@@ -10,18 +10,18 @@
   display: flex;
   flex-direction: row;
   transition: transform 0.3s ease-out;
+
 }
 
 .PorfolioContainerVideo {
   padding: 0.2%;
-  border-radius: 100px;
-  height: 600px;
-  width: 600px;
+  border-radius: 80px;
   flex-wrap: nowrap;
+  width: 35vw;
   overflow: hidden;
-  padding: 0;
-  position: relative;
 }
+
+
 
 .no-scroll {
   overflow: hidden;
@@ -51,15 +51,14 @@
 
 @media (max-width: 800px) {
   .PorfolioContainerDiv {
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease-out;
-    }
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-out;
+  }
 
-    .PorfolioContainerVideo {
-      padding: 0.2%;
-      border-radius: 120px;   
-      padding: 1rem;  
-    }
+  .PorfolioContainerVideo {
+    border-radius: 100px;
+  }
+
+
 }
-

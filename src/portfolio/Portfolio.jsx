@@ -72,12 +72,12 @@ function Portfolio() {
             let newScrollX = prevScrollX - event.deltaY * 0.1;
             console.log(newScrollX);
 
-            if (newScrollX > -60 && newScrollX < 60) {
+            if (newScrollX > -60 && newScrollX < 40) {
               document.body.classList.add("no-scroll");
             } else {
               document.body.classList.remove("no-scroll");
             }
-            newScrollX = Math.max(-60, Math.min(newScrollX, 60));
+            newScrollX = Math.max(-60, Math.min(newScrollX, 40));
 
             return newScrollX;
           });
@@ -170,7 +170,7 @@ function Portfolio() {
             className="PorfolioContainerVideo"
            
           >
-            <div>
+            <div className="PorfolioContainerVideoAnchor">
             <a
              onMouseEnter={() => {
               if (screenWidth > 800) {
@@ -197,9 +197,7 @@ function Portfolio() {
                 url={url}
                 width="100%"
                 height="100%"
-                style={{
-                  borderRadius: "100px",
-                }}
+               
               />
             </a>
             </div>
