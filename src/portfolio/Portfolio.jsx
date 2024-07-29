@@ -170,6 +170,7 @@ function Portfolio() {
             className="PorfolioContainerVideo"
            
           >
+            <div>
             <a
              onMouseEnter={() => {
               if (screenWidth > 800) {
@@ -196,10 +197,15 @@ function Portfolio() {
                 url={url}
                 width="100%"
                 height="100%"
+                style={{
+                  borderRadius: "100px",
+                }}
               />
             </a>
+            </div>
           </div>
         ))}
+        
       </div>
     </div>
   );
