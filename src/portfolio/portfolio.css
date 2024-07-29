@@ -1,65 +1,62 @@
 .PorfolioContainer {
-    background-color: #0d0d0d;
-    display: flex;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-  }
-  
+  background-color: #0d0d0d;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.PorfolioContainerDiv {
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease-out;
+}
+
+.PorfolioContainerVideo {
+  padding: 0.2%;
+  border-radius: 100px;
+  width: 40vw;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.PorfolioContainerVideoLink:hover {
+  cursor: none;
+}
+
+.cursor {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+@media (max-width: 800px) {
   .PorfolioContainerDiv {
-    display: flex;
-    flex-direction: row;
-    transition: transform 0.3s ease-out;
-  }
-  
-  .PorfolioContainerVideo {
-    padding: 0.2%;
-    border-radius: 150px;
-    height: 600px;
-    width: 600px;
-    flex-wrap: nowrap;
-    overflow: hidden;
-  }
-  
-  .no-scroll {
-    overflow: hidden;
-  }
-  
-  .PorfolioContainerVideoLink:hover {
-    cursor: none;
-  }
-  
-  .cursor {
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 12px;
-    text-align: center;
-  }
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease-out;
+    }
 
+    .PorfolioContainerVideo {
+      padding: 0.2%;
+      border-radius: 120px;   
+      padding: 1rem;  
+    }
+}
 
-  @media (max-width: 800px) {
-    .PorfolioContainerDiv {
-        display: flex;
-        flex-direction: column;
-        transition: transform 0.3s ease-out;
-      }
-
-      .PorfolioContainerVideo {
-        padding: 0.2%;
-        border-radius: 120px;
-        height: fit-content; 
-        width: fit-content;    
-        padding: 1rem;  
-      }
-  }
-  

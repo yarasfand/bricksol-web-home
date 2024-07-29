@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
-import { color, motion } from "framer-motion";
 import { useSpring, animated } from "@react-spring/web";
 import "./portfolio.css";
 
@@ -63,11 +62,12 @@ function Portfolio() {
         : "PorfolioContainerDiv is out of view"
     );
   });
+  const [isMouseInside, setIsMouseInside] = useState(false);
 
   useEffect(() => {
     if (screenWidth > 800) {
       const handleWheel = (event) => {
-        if (portfolioRef.current && portfolioRef.current.contains(event.target)) {
+        if (portfolioRef.current && portfolioRef.current.contains(event.target) && isMouseInside) {
           setScrollX((prevScrollX) => {
             let newScrollX = prevScrollX - event.deltaY * 0.1;
             console.log(newScrollX);
@@ -77,12 +77,12 @@ function Portfolio() {
             } else {
               document.body.classList.remove("no-scroll");
             }
-
-            // Clamp newScrollX between -60 and 60
             newScrollX = Math.max(-60, Math.min(newScrollX, 60));
 
             return newScrollX;
           });
+        } else {
+          document.body.classList.remove("no-scroll");
         }
       };
 
@@ -93,7 +93,7 @@ function Portfolio() {
         document.body.classList.remove("no-scroll"); // Clean up class on unmount
       };
     }
-  }, [portfolioRef, screenWidth]);
+  }, [portfolioRef, screenWidth, isMouseInside]);
 
   const horizontalTransform = scrollX;
 
@@ -141,7 +141,12 @@ function Portfolio() {
   ];
 
   return (
-    <div className="PorfolioContainer" ref={portfolioRef}>
+    <div
+      className="PorfolioContainer"
+      ref={portfolioRef}
+      onMouseEnter={() => setIsMouseInside(true)}
+      onMouseLeave={() => setIsMouseInside(false)}
+    >
       {screenWidth > 800 && (
         <animated.div
           className="cursor"
@@ -163,7 +168,10 @@ function Portfolio() {
           <div
             key={index}
             className="PorfolioContainerVideo"
-            onMouseEnter={() => {
+           
+          >
+            <a
+             onMouseEnter={() => {
               if (screenWidth > 800) {
                 setPlayingIndex(index);
                 textEnter();
@@ -175,8 +183,6 @@ function Portfolio() {
                 textLeave();
               }
             }}
-          >
-            <a
               href={videoLinks[index]}
               target="_blank"
               rel="noopener noreferrer"
