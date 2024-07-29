@@ -1,0 +1,209 @@
+.partnerContainer {
+  padding-top: 15vh;
+  background-color: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.partnerContainerHeading {
+  text-align: center;
+  font-family: var(--font-family);
+  padding-top: 1rem;
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 5rem;
+}
+
+.partnersDisplayContainer {
+  width: 80vw;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid white;
+  border-radius: 50px;
+}
+
+/* .partnersDisplayContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 25%; 
+  box-shadow: inset -150px 0px 50px -70px rgba(0, 0, 0, 0.773);
+  border-radius: 0 50px 50px 0; 
+  pointer-events: none; 
+}
+
+.partnersDisplayContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 7%; 
+    box-shadow: inset 100px 80px 80px -120px rgba(0, 0, 0, 0.773); 
+    border-radius: 0 50px 50px 0; 
+    pointer-events: none; 
+  } */
+
+.partnersDisplay {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  animation: scrollLeft 10s linear infinite;
+}
+
+.secondaryPartnersDisplay {
+  left: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.partnerImage {
+  display: inline-flex;
+  align-items: center;
+  height: 6rem;
+  width: 30%;
+  padding: 0.5rem 2rem;
+  border-right: 1px solid #fff;
+}
+
+.partnerImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-position: center;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 950px) {
+  .partnerImage {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .partnerImage {
+    flex: 0 0 33.33%;
+    padding: 0 0.2rem;
+  }
+  .partnerImage img {
+    display: block;
+    width: 90%;
+    height: 50%;
+    border-radius: inherit;
+    object-position: center;
+    object-fit: contain;
+    image-rendering: auto;
+  }
+
+  .secondaryPartnersDisplay {
+    left: 200%;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+  
+
+}
+
+@media (max-width: 400px) {
+
+.partnerImage {
+    flex: 0 0 60.33%;
+    padding: 0 0.2rem;
+  }
+  .partnerContainer{
+    padding-top: 0;
+  }
+
+  .secondaryPartnersDisplay {
+    left: 350%;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-350%);
+    }
+  }
+  
+
+}
+
+
+.PorfolioButtonContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 2rem 4.5rem;
+    justify-content: space-between;
+}
+
+
+.PorfolioHeading{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    flex-wrap: wrap;
+}
+
+.PorfolioHeading p{
+    font-family: var(--font-family);
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.PorfolioButtonContainerButtonDiv
+{
+    border-radius: 44px;
+    border: 3.5px solid rgb(29, 29, 29);
+    border-bottom: 5px solid rgb(29, 29, 29);
+    border-right: 6px solid rgb(29, 29, 29);
+    box-shadow: -1px -1.6px 0 0.5px gray;
+}
+
+.PorfolioButtonContainerButton{
+    justify-self: center;
+    align-self: center;
+}
+
+@media (max-width: 814px) {
+    .PorfolioButtonContainerButton{
+        display: none;
+    }
+}
